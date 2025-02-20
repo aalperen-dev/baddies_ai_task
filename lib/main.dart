@@ -1,5 +1,7 @@
 import 'package:baddies_ai_task/core/theme/app_text_theme.dart';
 import 'package:baddies_ai_task/features/auth/presentation/screens/login_screen.dart';
+import 'package:baddies_ai_task/features/auth/presentation/screens/register_screen.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -19,7 +21,7 @@ class MainApp extends StatelessWidget {
         textTheme: AppTextTheme.textTheme,
       ),
       home: Scaffold(
-        body: LoginScreen(),
+        body: HomeScreen(),
       ),
     );
   }
