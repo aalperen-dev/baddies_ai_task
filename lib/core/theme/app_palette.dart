@@ -10,4 +10,7 @@ class AppPalette {
   static const Color mutedBlue = Color.fromRGBO(62, 63, 76, 1);
   static const Color steelBlue = Color.fromRGBO(96, 100, 139, 1);
   static const Color neonPink = Color.fromRGBO(253, 4, 108, 1);
+  static const Color lightSteelBlueTransparent =
+      Color.fromRGBO(200, 208, 226, 0.15);
+  static const Color blackFogTransparent = Color.fromRGBO(0, 0, 0, 0.05);
 }

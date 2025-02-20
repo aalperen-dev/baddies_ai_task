@@ -1,33 +1,25 @@
 {
-  "@@locale" : "tr",
-//login screen
-  "hello": "Merhabalar",
-  "lorem": "Lorem ipsum",
-  "email": "E-Posta",
-  "password": "Şifre",
-  "english": "English",
-  "forgat_pass": "Şifremi Unuttum",
-  "dont_have_an_account": "Bir hesabın yok mu?",
-  "register": "Kayıt Ol!",
-
-//register screen
+    "@@locale" : "tr",
+    "hello": "Merhabalar",
+    "lorem": "Lorem ipsum",
+    "email": "E-Posta",
+    "password": "Şifre",
+    "english": "English",
+    "forgat_pass": "Şifremi Unuttum",
+    "dont_have_an_account": "Bir hesabın yok mu?",
+    "register": "Kayıt Ol!",
     "welcome": "Hoşgeldiniz",
-  "name_surname": "Ad Soyad",
-  "password_repeat": "Şifre Tekrar",
-  "user_agreement": "Kullanıcı sözleşmesini",
-  "read_agree": "okudum ve kabul ediyorum.",
-  "read_cont": "Bu sözeleşmeyi okuyarak devam ediniz lütfen.",
-  "have_an_account": "Zaten bir hesabın var mı?",
-
-//home screen
-"welcome_two": "Hoş Geldin",
-"all_ai_friends": "Tüm AI Arkadaşlar",
-"newest_ai_friends": "En Yeniler Arkadaşların",
-"oldest_ai_friends": "En Eski Arkadaşlar",
-
-
-//butonlar
-  "login": "Giriş yap",
-  "register_now": "Şimdi Kaydol",
-  "create_new_ai_friend": "AI Arkadaş Oluştur",
+    "name_surname": "Ad Soyad",
+    "password_repeat": "Şifre Tekrar",
+    "user_agreement": "Kullanıcı sözleşmesini",
+    "read_agree": "okudum ve kabul ediyorum.",
+    "read_cont": "Bu sözeleşmeyi okuyarak devam ediniz lütfen.",
+    "have_an_account": "Zaten bir hesabın var mı?",
+    "welcome_two": "Hoş Geldin",
+    "all_ai_friends": "Tüm AI Arkadaşlar",
+    "newest_ai_friends": "En Yeniler Arkadaşların",
+    "oldest_ai_friends": "En Eski Arkadaşlar",
+    "login": "Giriş yap",
+    "register_now": "Şimdi Kaydol",
+    "create_new_ai_friend": "AI Arkadaş Oluştur"
 }

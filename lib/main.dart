@@ -1,3 +1,5 @@
+import 'package:baddies_ai_task/core/theme/app_text_theme.dart';
+import 'package:baddies_ai_task/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -10,16 +12,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      /// Delegate: Temsilci Listesi
+    return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-
-      /// Desteklenen Diller
       supportedLocales: AppLocalizations.supportedLocales,
+      theme: ThemeData(
+        textTheme: AppTextTheme.textTheme,
+      ),
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: LoginScreen(),
       ),
     );
   }
