@@ -2,14 +2,38 @@ import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:baddies_ai_task/core/theme/app_palette.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/chat_tab.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/profile_tab.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/search_tab.dart';
 import 'package:baddies_ai_task/features/home/presentation/widgets/circle_pink_button.dart';
 import 'package:flutter/material.dart';
+import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
-import '../widgets/circle_search_button.dart';
 import '../widgets/mini_button.dart';
+import 'tabs/home_tab.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int selectedIndex = 0;
+  final controller = PageController();
+  List<Widget> tabs = [
+    HomeTab(),
+    SearchTab(),
+    ChatTab(),
+    ProfileTab(),
+  ];
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,51 +121,54 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          // header ve arama butonu
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('${context.translate.welcome_two} 👋',
-                      style: context.textStyles.headlineLarge),
-                  Text(
-                    context.translate.choose_your_friend,
-                    style: context.textStyles.bodyMedium.copyWith(
-                      color: AppPalette.darkBlueTransparent,
-                    ),
-                  ),
-                ],
-              ),
-              CircleSearchButton(
-                onTap: () {
-                  // TODO: Implement search functionality
-                },
-              ),
-            ],
+      body: PageView(
+        controller: controller,
+        children: tabs,
+        onPageChanged: (value) {
+          setState(() {
+            selectedIndex = value;
+          });
+        },
+      ),
+      bottomNavigationBar: StylishBottomBar(
+        currentIndex: selectedIndex,
+        items: [
+          BottomBarItem(
+            icon: Icon(Icons.content_copy_rounded),
+            title: Icon(Icons.content_copy_outlined, color: AppPalette.pink),
+            selectedColor: AppPalette.pink,
+            unSelectedColor: AppPalette.darkPurple,
           ),
-          // chipler
-          Align(
-            alignment: Alignment.topCenter,
-            child: SizedBox(
-              height: kToolbarHeight,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return Chip(
-                    label: Text('Chip $index'),
-                  );
-                },
-              ),
-            ),
+          BottomBarItem(
+            icon: Icon(Icons.search_rounded),
+            title: Icon(Icons.zoom_in_rounded, color: AppPalette.pink),
+            selectedColor: AppPalette.pink,
+            unSelectedColor: AppPalette.darkPurple,
           ),
-          Text('text'),
+          BottomBarItem(
+            icon: Icon(Icons.chat_bubble_outline_rounded),
+            title: Icon(Icons.chat_rounded, color: AppPalette.pink),
+            selectedColor: AppPalette.pink,
+            unSelectedColor: AppPalette.darkPurple,
+          ),
+          BottomBarItem(
+            icon: Icon(Icons.person_outline_rounded),
+            title: Icon(Icons.person_rounded, color: AppPalette.pink),
+            selectedColor: AppPalette.pink,
+            unSelectedColor: AppPalette.darkPurple,
+          ),
         ],
+        option: DotBarOptions(
+          dotStyle: DotStyle.tile,
+          inkColor: AppPalette.black,
+        ),
+        onTap: (index) {
+          if (index == selectedIndex) return;
+          controller.jumpToPage(index);
+          setState(() {
+            selectedIndex = index;
+          });
+        },
       ),
     );
   }

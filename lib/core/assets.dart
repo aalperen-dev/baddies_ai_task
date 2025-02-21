@@ -90,4 +90,5 @@ class _assets_images_dart {
 
   final ai_friend_png = 'assets/images/ai_friend.png';
   final baddies_logo_png = 'assets/images/baddies_logo.png';
+  final grain_texture_png = 'assets/images/grain_texture.png';
 }
