@@ -70,11 +70,14 @@ class _assets_icons_dart {
 
   final add_user_png = 'assets/icons/add_user.png';
   final apple_png = 'assets/icons/apple.png';
+  final chat_pro_png = 'assets/icons/chat_pro.png';
   final facebook_png = 'assets/icons/facebook.png';
   final google_png = 'assets/icons/google.png';
+  final image_pro_png = 'assets/icons/image_pro.png';
   final message_png = 'assets/icons/message.png';
   final planet_png = 'assets/icons/planet.png';
   final planet14_png = 'assets/icons/planet14.png';
+  final search_pro_png = 'assets/icons/search_pro.png';
   final unlock_png = 'assets/icons/unlock.png';
 }
 

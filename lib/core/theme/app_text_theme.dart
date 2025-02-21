@@ -55,7 +55,7 @@ class AppTextTheme {
         bodyMedium: TextStyle(
           fontFamily: 'Ambit',
           fontSize: 14,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
           fontFamily: 'Ambit',
@@ -64,7 +64,3 @@ class AppTextTheme {
         ),
       );
 }
-
-// extension CustomTextTheme on BuildContext {
-//   TextTheme get textTheme => Theme.of(this).textTheme;
-// }
