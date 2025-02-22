@@ -1,5 +1,6 @@
 import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
+import 'package:baddies_ai_task/features/home/presentation/widgets/gradient_texture_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/app_palette.dart';
@@ -49,8 +50,13 @@ class HomeTab extends StatelessWidget {
           width: 300,
           height: 400,
         ),
-
-        Text('text'),
+        //
+        GradientTextureButton(
+          buttonText: context.translate.upgrade_to_premium,
+          onTap: () {
+            // TODO: ödeme sayfasına yönlendirme
+          },
+        ),
       ],
     );
   }

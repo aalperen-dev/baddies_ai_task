@@ -4,6 +4,7 @@ class AppPalette {
   static const Color black = Colors.black;
   static const Color white = Colors.white;
   static const Color pink = Color.fromRGBO(231, 28, 113, 1);
+  static const Color pinkTransparent = Color.fromRGBO(231, 28, 113, 0.3);
   static const Color darkBlue = Color.fromRGBO(22, 30, 42, 1);
   static const Color darkBlueTransparent = Color.fromRGBO(22, 30, 42, 0.75);
   static const Color greyTransparent = Color.fromRGBO(29, 29, 29, 0.65);

@@ -1,76 +1,67 @@
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
+import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
+import 'package:baddies_ai_task/core/theme/app_palette.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
+import 'package:neon_widgets/neon_widgets.dart';
 
 class GradientTextureButton extends StatelessWidget {
-  const GradientTextureButton({super.key});
+  final String buttonText;
+  final Function()? onTap;
+  final IconData? iconData;
+  const GradientTextureButton(
+      {super.key, required this.buttonText, this.onTap, this.iconData});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Stack(
-        children: [
-          GrainButton(),
-          Positioned.fill(
-            child: IgnorePointer(
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      context.assets.images.grain_texture_png,
-                    ),
-                    repeat: ImageRepeat.repeat,
-                    colorFilter: ColorFilter.mode(
-                      Colors.pink.withOpacity(0.05),
-                      BlendMode.overlay,
-                    ),
-                  ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(kToolbarHeight / 2),
+          border: Border.all(
+            color: AppPalette.pinkTransparent,
+            width: 2,
+            style: BorderStyle.solid,
+          ),
+        ),
+        child: NeonContainer(
+          spreadColor: AppPalette.pinkTransparent,
+          containerColor: AppPalette.pinkTransparent,
+          borderRadius: BorderRadius.circular(kToolbarHeight / 2),
+          borderWidth: 2,
+          lightSpreadRadius: 1,
+          lightBlurRadius: 10,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(kToolbarHeight / 2),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  context.assets.images.pink_grain_texture_png,
                 ),
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class GrainButton extends StatelessWidget {
-  const GrainButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.black.withOpacity(0.3),
-        elevation: 8,
-      ).copyWith(
-        elevation: MaterialStateProperty.all(8),
-        backgroundColor: MaterialStateProperty.all(Colors.transparent),
-      ),
-      child: Ink(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFFF007A), Color(0xFFFF4FB3)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Container(
-          constraints: BoxConstraints(minWidth: 200, minHeight: 50),
-          alignment: Alignment.center,
-          child: Text(
-            'Custom Text',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              spacing: 5,
+              children: [
+                GlowIcon(
+                  glowColor: AppPalette.neonPink,
+                  blurRadius: 10,
+                  iconData ?? Icons.flash_on_rounded,
+                  color: AppPalette.white,
+                ),
+                GlowText(
+                  buttonText,
+                  style: TextStyle(color: AppPalette.white),
+                  blurRadius: 10,
+                  glowColor: Colors.pink.shade900,
+                ),
+              ],
             ),
           ),
         ),

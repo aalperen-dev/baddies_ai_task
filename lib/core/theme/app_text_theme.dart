@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class AppTextTheme {
   static TextTheme get textTheme => TextTheme(
         displayLarge: TextStyle(
-          fontFamily: 'NeuePlak',
+          fontFamily: 'Neue Plak',
           fontSize: 32,
           fontWeight: FontWeight.bold,
         ),
         displayMedium: TextStyle(
-          fontFamily: 'NeuePlak',
+          fontFamily: 'Neue Plak',
           fontSize: 28,
           fontWeight: FontWeight.w700,
         ),
         displaySmall: TextStyle(
-          fontFamily: 'NeuePlak',
+          fontFamily: 'Neue Plak',
           fontSize: 24,
           fontWeight: FontWeight.w600,
         ),
@@ -23,12 +23,12 @@ class AppTextTheme {
           fontWeight: FontWeight.w600,
         ),
         labelMedium: TextStyle(
-          fontFamily: 'NeuePlak',
+          fontFamily: 'Neue Plak',
           fontSize: 12,
           fontWeight: FontWeight.w400,
         ),
         labelSmall: TextStyle(
-          fontFamily: 'NeuePlak',
+          fontFamily: 'Neue Plak',
           fontSize: 10,
           fontWeight: FontWeight.w300,
         ),

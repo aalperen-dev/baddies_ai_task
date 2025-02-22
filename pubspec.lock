@@ -70,6 +70,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_glow:
+    dependency: "direct main"
+    description:
+      name: flutter_glow
+      sha256: d9b55bcc01eb0f0d922df837015c63732b1c7d62395c2bfa750f3d741ba2336e
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -152,6 +160,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  neon_widgets:
+    dependency: "direct main"
+    description:
+      name: neon_widgets
+      sha256: "782f43b576b47c192eabd08ff66e16d136d339044ebe441337183dd4dc629daf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   path:
     dependency: transitive
     description:
@@ -221,6 +237,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.4"
+  text_neon_widget:
+    dependency: "direct main"
+    description:
+      name: text_neon_widget
+      sha256: c0d92e9d63b0c15b069f9fc7bc8172615d1f8c3ad526c003e54b7dadeb15d31b
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.6"
   vector_math:
     dependency: transitive
     description:

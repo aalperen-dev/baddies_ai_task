@@ -7,9 +7,7 @@ class ChatTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        GradientTextureButton(),
-      ],
+      children: [],
     );
   }
 }
