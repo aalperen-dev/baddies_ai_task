@@ -18,7 +18,7 @@ class AppTextTheme {
           fontWeight: FontWeight.w600,
         ),
         labelLarge: TextStyle(
-          fontFamily: 'NeuePlak',
+          fontFamily: 'Neue Plak',
           fontSize: 14,
           fontWeight: FontWeight.w600,
         ),

@@ -3,7 +3,7 @@ import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:baddies_ai_task/core/theme/app_palette.dart';
 import 'package:baddies_ai_task/features/home/presentation/screens/tabs/chat_tab.dart';
-import 'package:baddies_ai_task/features/home/presentation/screens/tabs/profile_tab.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/profile_tab/profile_tab.dart';
 import 'package:baddies_ai_task/features/home/presentation/screens/tabs/search_tab.dart';
 import 'package:baddies_ai_task/features/home/presentation/widgets/circle_pink_button.dart';
 import 'package:flutter/material.dart';

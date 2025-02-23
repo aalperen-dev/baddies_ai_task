@@ -6,11 +6,12 @@ class UserModel {
   final int imagesCount;
   final int unreadMsgCount;
 
-  UserModel(
-      {required this.id,
-      required this.fullname,
-      required this.email,
-      required this.isPremiumMember,
-      required this.imagesCount,
-      required this.unreadMsgCount});
+  UserModel({
+    required this.id,
+    required this.fullname,
+    required this.email,
+    required this.isPremiumMember,
+    required this.imagesCount,
+    required this.unreadMsgCount,
+  });
 }

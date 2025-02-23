@@ -73,6 +73,7 @@ class _assets_icons_dart {
   final chat_pro_png = 'assets/icons/chat_pro.png';
   final facebook_png = 'assets/icons/facebook.png';
   final google_png = 'assets/icons/google.png';
+  final hat_pro_png = 'assets/icons/hat_pro.png';
   final image_pro_png = 'assets/icons/image_pro.png';
   final message_png = 'assets/icons/message.png';
   final planet_png = 'assets/icons/planet.png';
