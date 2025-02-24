@@ -71,6 +71,7 @@ class _assets_icons_dart {
   final add_user_png = 'assets/icons/add_user.png';
   final apple_png = 'assets/icons/apple.png';
   final chat_pro_png = 'assets/icons/chat_pro.png';
+  final check_out_pro_png = 'assets/icons/check_out_pro.png';
   final facebook_png = 'assets/icons/facebook.png';
   final google_png = 'assets/icons/google.png';
   final hat_pro_png = 'assets/icons/hat_pro.png';

@@ -1,5 +1,4 @@
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
-import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:baddies_ai_task/core/theme/app_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_glow/flutter_glow.dart';

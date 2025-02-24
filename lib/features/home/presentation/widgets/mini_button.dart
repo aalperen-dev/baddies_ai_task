@@ -17,21 +17,25 @@ class MiniButtonForAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Row(
-        spacing: 1,
-        children: [
-          Image.asset(
-            assetImagePath,
-            color: AppPalette.darkBlue,
-          ),
-          Text(
-            imageText,
-            style: context.textStyles.headlineMedium.copyWith(
-              fontSize: 10,
+      child: SizedBox(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 1,
+          children: [
+            Image.asset(
+              assetImagePath,
               color: AppPalette.darkBlue,
             ),
-          ),
-        ],
+            Text(
+              imageText,
+              style: context.textStyles.headlineMedium.copyWith(
+                fontSize: 10,
+                color: AppPalette.darkBlue,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
