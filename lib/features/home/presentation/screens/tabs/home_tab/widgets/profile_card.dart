@@ -1,7 +1,12 @@
+import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
+import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
+import 'package:baddies_ai_task/core/theme/app_palette.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
   final String name;
+  final bool isLeft;
+  final Color bgColor;
   final String? imageUrl;
   final double width;
   final double height;
@@ -9,9 +14,11 @@ class ProfileCard extends StatelessWidget {
   const ProfileCard({
     super.key,
     required this.name,
+    required this.isLeft,
+    required this.bgColor,
     this.imageUrl,
-    this.width = 300,
-    this.height = 400,
+    this.width = 170,
+    this.height = 195,
   });
 
   @override
@@ -20,49 +27,47 @@ class ProfileCard extends StatelessWidget {
       width: width,
       height: height,
       child: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
         children: [
+          ClipPath(
+            clipper: SlantedCardClipper(isLeft: isLeft),
+            child: Image.asset(
+              context.assets.images.grain_texture_square_png,
+              color: bgColor.withValues(alpha: 0.6),
+              width: width,
+              height: height,
+              fit: BoxFit.fitHeight,
+            ),
+          ),
           CustomPaint(
             size: Size(width, height),
-            painter: SlantedCardPainter(),
+            painter: SlantedCardPainter(
+              isLeft: isLeft,
+              bgColor: bgColor.withValues(alpha: 0.7),
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: width * 0.8,
-                  height: width * 0.8,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: ClipOval(
-                    child: imageUrl != null
-                        ? Image.network(
-                            imageUrl!,
-                            fit: BoxFit.cover,
-                          )
-                        : Container(
-                            color: Colors.grey[200],
-                            child: Icon(
-                              Icons.person,
-                              size: width * 0.4,
-                              color: Colors.grey[400],
-                            ),
-                          ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontSize: width * 0.08,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+          Positioned(
+            bottom: 40,
+            // TODO: resim ve ilgili widget değiştirilebilir.
+            child: CircleAvatar(
+              radius: 40,
+              backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=1'),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: bgColor.withValues(alpha: 0.9),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            height: 30,
+            width: 115,
+            child: Text(
+              name,
+              style: context.textStyles.labelMedium.copyWith(
+                fontSize: 16,
+                color: AppPalette.white,
+              ),
             ),
           ),
         ],
@@ -71,61 +76,93 @@ class ProfileCard extends StatelessWidget {
   }
 }
 
+class SlantedCardClipper extends CustomClipper<Path> {
+  final bool isLeft;
+  SlantedCardClipper({required this.isLeft});
+
+  @override
+  Path getClip(Size size) {
+    final double radius = 20.0;
+    Path path = Path();
+
+    if (!isLeft) {
+      path.moveTo(0, radius);
+      path.arcToPoint(Offset(radius, 0),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width - radius, 20);
+      path.arcToPoint(Offset(size.width, 20 + radius),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width, size.height - radius);
+      path.arcToPoint(Offset(size.width - radius, size.height),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(radius, size.height - 20);
+      path.arcToPoint(Offset(0, size.height - 20 - radius),
+          radius: Radius.circular(radius), clockwise: true);
+    } else {
+      path.moveTo(0, 20 + radius);
+      path.arcToPoint(Offset(radius, 20),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width - radius, 0);
+      path.arcToPoint(Offset(size.width, radius),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width, size.height - 20 - radius);
+      path.arcToPoint(Offset(size.width - radius, size.height - 20),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(radius, size.height);
+      path.arcToPoint(Offset(0, size.height - radius),
+          radius: Radius.circular(radius), clockwise: true);
+    }
+
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+}
+
 class SlantedCardPainter extends CustomPainter {
+  final bool isLeft;
+  final Color bgColor;
+
+  SlantedCardPainter({required this.isLeft, required this.bgColor});
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFB0C4DE) // Açık mavi renk
+      ..color = bgColor
       ..style = PaintingStyle.fill;
 
-    final double slantHeight =
-        size.height * 0.08; // Sağ kenarı yukarı kaydırma miktarı
-    final double radius = 20.0; // Köşe yuvarlatma
-
+    final double radius = 20.0;
     final path = Path();
 
-    // Sol üst başlangıç noktası (ekrana paralel ve düz)
-    path.moveTo(0, radius);
-
-    // Sol üst köşe
-    path.arcToPoint(
-      Offset(radius, 0),
-      radius: Radius.circular(radius),
-      clockwise: true,
-    );
-
-    // Üst kenar (sağ tarafa doğru eğimli)
-    path.lineTo(size.width - radius, slantHeight);
-
-    // Sağ üst köşe
-    path.arcToPoint(
-      Offset(size.width, slantHeight + radius),
-      radius: Radius.circular(radius),
-      clockwise: true,
-    );
-
-    // Sağ kenar (dik ve yukarıda başlıyor)
-    path.lineTo(size.width, size.height - radius);
-
-    // Sağ alt köşe
-    path.arcToPoint(
-      Offset(size.width - radius, size.height),
-      radius: Radius.circular(radius),
-      clockwise: true,
-    );
-
-    // Alt kenar (üst kenara paralel ve eğimli)
-    path.lineTo(radius, size.height - slantHeight);
-
-    // Sol alt köşe
-    path.arcToPoint(
-      Offset(0, size.height - radius - slantHeight),
-      radius: Radius.circular(radius),
-      clockwise: true,
-    );
-
-    // Sol kenar (dik ve ekrana paralel)
-    path.lineTo(0, radius);
+    if (!isLeft) {
+      path.moveTo(0, radius);
+      path.arcToPoint(Offset(radius, 0),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width - radius, 20);
+      path.arcToPoint(Offset(size.width, 20 + radius),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width, size.height - radius);
+      path.arcToPoint(Offset(size.width - radius, size.height),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(radius, size.height - 20);
+      path.arcToPoint(Offset(0, size.height - 20 - radius),
+          radius: Radius.circular(radius), clockwise: true);
+    } else {
+      path.moveTo(0, 20 + radius);
+      path.arcToPoint(Offset(radius, 20),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width - radius, 0);
+      path.arcToPoint(Offset(size.width, radius),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(size.width, size.height - 20 - radius);
+      path.arcToPoint(Offset(size.width - radius, size.height - 20),
+          radius: Radius.circular(radius), clockwise: true);
+      path.lineTo(radius, size.height);
+      path.arcToPoint(Offset(0, size.height - radius),
+          radius: Radius.circular(radius), clockwise: true);
+    }
 
     path.close();
     canvas.drawPath(path, paint);

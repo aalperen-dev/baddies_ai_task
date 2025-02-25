@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/theme/app_palette.dart';
 import 'widgets/circle_pink_button.dart';
-import 'circle_search_button.dart';
+import 'widgets/circle_search_button.dart';
 import 'widgets/mini_button.dart';
 import 'widgets/profile_card.dart';
 import 'widgets/selectable_chip_list.dart';
@@ -102,49 +102,61 @@ class HomeTab extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          // header ve arama butonu
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('${context.translate.welcome_two} 👋',
-                      style: context.textStyles.headlineLarge),
-                  Text(
-                    context.translate.choose_your_friend,
-                    style: context.textStyles.bodyMedium.copyWith(
-                      color: AppPalette.darkBlueTransparent,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // header ve arama butonu
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('${context.translate.welcome_two} 👋',
+                        style: context.textStyles.headlineLarge),
+                    Text(
+                      context.translate.choose_your_friend,
+                      style: context.textStyles.bodyMedium.copyWith(
+                        color: AppPalette.darkBlueTransparent,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              CircleSearchButton(
-                onTap: () {
-                  // TODO: Implement search functionality
-                },
-              ),
-            ],
-          ),
-          // chipler
-          SelectableChipList(),
-          // cardlar
-          ProfileCard(
-            name: 'Thyraxis',
-            imageUrl: 'https://avatar.iran.liara.run/public/14',
-            width: 300,
-            height: 400,
-          ),
-          //
-          GradientTextureButton(
-            buttonText: context.translate.upgrade_to_premium,
-            onTap: () {
-              // TODO: ödeme sayfasına yönlendirme
-            },
-          ),
-        ],
+                  ],
+                ),
+                CircleSearchButton(
+                  onTap: () {
+                    // TODO: arama fonksiyonu
+                  },
+                ),
+              ],
+            ),
+            // chipler
+            SelectableChipList(),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 20,
+              children: [
+                ProfileCard(
+                  name: 'Thyraxis',
+                  isLeft: true,
+                  bgColor: Colors.red,
+                ),
+                ProfileCard(
+                  name: 'Thyraxis',
+                  isLeft: false,
+                  bgColor: AppPalette.lightBlue,
+                ),
+              ],
+            ),
+
+            GradientTextureButton(
+              buttonText: context.translate.upgrade_to_premium,
+              onTap: () {
+                // TODO: ödeme sayfasına yönlendirme
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

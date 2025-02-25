@@ -1,7 +1,7 @@
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/theme/app_palette.dart';
+import '../../../../../../../core/theme/app_palette.dart';
 
 class CircleSearchButton extends StatelessWidget {
   final Function()? onTap;

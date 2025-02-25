@@ -1,8 +1,5 @@
-// widgets/custom_dropdown_button.dart
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../../../core/theme/app_palette.dart';
 
 class CustomDropdownButton<T> extends StatelessWidget {
   final List<T> items;
@@ -23,24 +20,20 @@ class CustomDropdownButton<T> extends StatelessWidget {
     return DropdownButtonHideUnderline(
       child: DropdownButton2<T>(
         isExpanded: true,
-        hint: itemBuilder(items[0]),
+        value: selectedItem,
         items: items.map((item) {
           return DropdownMenuItem<T>(
             value: item,
             child: itemBuilder(item),
           );
         }).toList(),
-        value: selectedItem,
         onChanged: onChanged,
         buttonStyleData: ButtonStyleData(
           padding: const EdgeInsets.symmetric(horizontal: 14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            color: AppPalette.frostedBlueGrey,
-            border: Border.all(
-              width: 1,
-              color: AppPalette.blackFogTransparent,
-            ),
+            color: Colors.white,
+            border: Border.all(width: 1, color: Colors.black12),
           ),
         ),
         iconStyleData: const IconStyleData(
