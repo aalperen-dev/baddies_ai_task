@@ -15,11 +15,10 @@ dependencies:
   stylish_bottom_bar: ^1.1.0
   flutter_glow: ^0.3.2
   neon_widgets: ^2.0.0
-  animated_custom_dropdown: ^3.1.1
   dropdown_button2: ^2.3.9
-  fui_kit: ^2.0.2
   font_awesome_flutter: ^10.8.0
   toggle_switch: ^2.3.0
+  ticket_material: ^0.3.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

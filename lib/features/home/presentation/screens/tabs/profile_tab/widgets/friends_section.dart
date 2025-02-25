@@ -2,7 +2,7 @@ import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../widgets/friend_bar.dart';
+import 'friend_bar.dart';
 import 'custom_dropdown_button.dart';
 
 class FriendSelectionSection extends StatelessWidget {

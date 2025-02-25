@@ -1,6 +1,11 @@
 import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
-import 'package:baddies_ai_task/core/theme/app_palette.dart';
+import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/chat_tab/widgets/chat_input_field.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/chat_tab/widgets/simple_wicket_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_material/ticket_material.dart';
+
+import '../../../../../core/theme/app_palette.dart';
 
 class SearchTab extends StatelessWidget {
   const SearchTab({super.key});
@@ -12,42 +17,10 @@ class SearchTab extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          //
-          const SizedBox(height: 50),
-          // test
-
-          IntrinsicWidth(
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 15,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.zero,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppPalette.pink,
-                    spreadRadius: -10.0,
-                    blurRadius: 20.0,
-                    blurStyle: BlurStyle.inner,
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  'TEXT' * 3,
-                  style: context.textStyles.headlineLarge.copyWith(
-                    fontSize: 12,
-                    color: AppPalette.white,
-                  ),
-                ),
-              ),
-            ),
+          const SizedBox(height: 100),
+          ChatInputField(
+            controller: TextEditingController(),
+            hintText: '',
           ),
         ],
       ),

@@ -5,7 +5,7 @@ import 'package:baddies_ai_task/features/home/presentation/screens/tabs/search_t
 import 'package:flutter/material.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
-import 'tabs/home_tab.dart';
+import 'tabs/home_tab/home_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

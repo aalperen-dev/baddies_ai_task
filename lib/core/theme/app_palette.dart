@@ -9,8 +9,10 @@ class AppPalette {
   static const Color darkBlueTransparent = Color.fromRGBO(22, 30, 42, 0.75);
   static const Color greyTransparent = Color.fromRGBO(29, 29, 29, 0.65);
   static const Color darkGrey = Color.fromRGBO(29, 29, 29, 1);
+
   static const Color darkGreyTransparent = Color.fromRGBO(29, 29, 29, 0.3);
   static const Color darkPurple = Color.fromRGBO(40, 18, 63, 1);
+  static const Color darkPurpleTransparent = Color.fromRGBO(33, 22, 75, 0.5);
   static const Color mutedBlue = Color.fromRGBO(62, 63, 76, 1);
   static const Color steelBlue = Color.fromRGBO(96, 100, 139, 1);
   static const Color neonPink = Color.fromRGBO(253, 4, 108, 1);
@@ -26,4 +28,6 @@ class AppPalette {
   static const Color frostedBlueGreyTwo = Color.fromRGBO(139, 144, 148, 1);
   static const Color frostedBlueGreyThree = Color.fromRGBO(95, 99, 104, 1);
   static const Color frostedGrey = Color.fromRGBO(157, 159, 182, 1);
+  static const Color frostedBlack = Color.fromRGBO(28, 29, 33, 1);
+  static const Color whiteTransparent = Color.fromRGBO(232, 234, 237, 0.5);
 }

@@ -1,4 +1,5 @@
 import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/chat_tab/chat_details_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/theme/app_palette.dart';
@@ -15,6 +16,7 @@ class ChatPreview extends StatelessWidget {
     return ListTile(
       onTap: () {
         // TODO: chat detayına yönlendirilecek
+        context.navigator.pushMaterial(ChatDetailsScreen());
       },
       leading: Stack(
         children: [

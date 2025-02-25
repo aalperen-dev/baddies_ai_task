@@ -2,7 +2,7 @@ import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:baddies_ai_task/core/theme/app_palette.dart';
-import 'package:baddies_ai_task/features/home/presentation/widgets/selectable_chip_list.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/tabs/home_tab/widgets/selectable_chip_list.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/chat_preview.dart';

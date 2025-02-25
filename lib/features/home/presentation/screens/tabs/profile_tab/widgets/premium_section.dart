@@ -2,7 +2,7 @@ import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../widgets/gradient_texture_button.dart';
-import '../../../../widgets/white_curved_button.dart';
+import 'white_curved_button.dart';
 
 class PremiumSection extends StatelessWidget {
   const PremiumSection({super.key});
