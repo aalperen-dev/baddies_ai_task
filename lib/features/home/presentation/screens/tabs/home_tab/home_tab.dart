@@ -104,7 +104,8 @@ class HomeTab extends StatelessWidget {
               ),
 
               GradientTextureButton(
-                buttonText: context.translate.upgrade_to_premium,
+                buttonText: context.translate.create_new_ai_friend,
+                iconData: Icons.star_rounded,
                 onTap: () {
                   // TODO: ödeme sayfasına yönlendirme
                 },
