@@ -70,14 +70,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_glow:
-    dependency: "direct main"
-    description:
-      name: flutter_glow
-      sha256: d9b55bcc01eb0f0d922df837015c63732b1c7d62395c2bfa750f3d741ba2336e
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -168,14 +160,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
-  neon_widgets:
-    dependency: "direct main"
-    description:
-      name: neon_widgets
-      sha256: "782f43b576b47c192eabd08ff66e16d136d339044ebe441337183dd4dc629daf"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   path:
     dependency: transitive
     description:
@@ -245,14 +229,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.4"
-  ticket_material:
-    dependency: "direct main"
-    description:
-      name: ticket_material
-      sha256: c1d3dbe6878ae9fa28d7da9234b0143f0d72ff49e971c28ef78146c58722f078
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.1"
   toggle_switch:
     dependency: "direct main"
     description:
