@@ -1,3 +1,4 @@
+import 'package:baddies_ai_task/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
@@ -19,6 +20,7 @@ class RegisterScreen extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Image.asset(context.assets.images.baddies_logo_png),
       ),
@@ -172,6 +174,7 @@ class RegisterScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           // TODO: login ekranına yönlendirme yapılacak
+                          context.navigator.pushMaterial(LoginScreen());
                         },
                         child: Text(
                           context.translate.login,

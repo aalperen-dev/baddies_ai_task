@@ -17,6 +17,7 @@ class ChatTab extends StatelessWidget {
         slivers: [
           // Appbar
           SliverAppBar(
+            automaticallyImplyLeading: false,
             floating: true,
             snap: true,
             centerTitle: true,

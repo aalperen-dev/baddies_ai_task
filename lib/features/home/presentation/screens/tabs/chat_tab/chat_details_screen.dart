@@ -1,6 +1,7 @@
 import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:baddies_ai_task/features/home/presentation/screens/tabs/chat_tab/widgets/chat_input_field.dart';
+import 'package:baddies_ai_task/features/home/presentation/widgets/app_bar_actions.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../core/theme/app_palette.dart';
 import '../../../widgets/gradient_texture_button.dart';
@@ -27,6 +28,7 @@ class ChatDetailsScreen extends StatelessWidget {
             color: AppPalette.black,
           ),
         ),
+        actions: [AppBaActions()],
       ),
       body: Column(
         children: [

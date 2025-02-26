@@ -20,7 +20,7 @@ class CustomDropdownButton<T> extends StatelessWidget {
     return DropdownButtonHideUnderline(
       child: DropdownButton2<T>(
         isExpanded: true,
-        value: selectedItem,
+        value: selectedItem ?? items[0],
         items: items.map((item) {
           return DropdownMenuItem<T>(
             value: item,

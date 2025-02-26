@@ -2,6 +2,8 @@ import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:baddies_ai_task/core/extentions/asset_extention.dart';
 import 'package:baddies_ai_task/core/extentions/l10n_exntesions.dart';
 import 'package:baddies_ai_task/core/theme/app_palette.dart';
+import 'package:baddies_ai_task/features/auth/presentation/screens/register_screen.dart';
+import 'package:baddies_ai_task/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/auth_input_field.dart';
@@ -18,20 +20,14 @@ class LoginScreen extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Row(
-          children: [
-            Image.asset(
-              context.assets.icons.planet_png,
-            ),
-            Text('text'),
-          ],
-        ),
+        title: Image.asset(context.assets.images.baddies_logo_png),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
-            top: context.sizes.height * 0.1,
+            top: context.sizes.height * 0.06,
           ),
           child: Padding(
             padding: const EdgeInsets.all(40.0),
@@ -91,6 +87,8 @@ class LoginScreen extends StatelessWidget {
                           buttonText: context.translate.login,
                           onTap: () {
                             // TODO: login işlemi yapılacak
+                            // geçici login
+                            context.navigator.pushMaterial(HomeScreen());
                           },
                         ),
                       ],
@@ -144,6 +142,7 @@ class LoginScreen extends StatelessWidget {
                         GestureDetector(
                           onTap: () {
                             // TODO: kayıt ol ekranına yönlendirme yapılacak
+                            context.navigator.pushMaterial(RegisterScreen());
                           },
                           child: Text(
                             context.translate.register,
