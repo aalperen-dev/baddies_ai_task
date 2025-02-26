@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/theme/app_palette.dart';
 import '../../../widgets/app_bar_actions.dart';
-import 'widgets/circle_pink_button.dart';
 import 'widgets/circle_search_button.dart';
-import 'widgets/mini_button.dart';
 import 'widgets/profile_card.dart';
 import 'widgets/selectable_chip_list.dart';
 
